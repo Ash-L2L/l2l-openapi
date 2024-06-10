@@ -1,0 +1,13 @@
+[workspace]
+resolver = "2"
+members = [
+    "lib",
+    "macros",
+]
+
+[workspace.package]
+authors = [
+    "Ash Manning <ash@layertwolabs.com>",
+]
+edition = "2021"
+version = "0.0.0"

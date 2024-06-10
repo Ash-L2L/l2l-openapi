@@ -1,0 +1,19 @@
+[package]
+name = "l2l-openapi"
+authors.workspace = true
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+jsonrpsee = "0.20"
+l2l-openapi-macros = { path = "../macros" }
+utoipa = "4"
+
+[dev-dependencies]
+anyhow = "1.0.72"
+jsonrpsee = { version = "0.20", features = ["macros", "server"] }
+serde = { version = "1.0.179", features = ["derive"] }
+
+[lib]
+name = "l2l_openapi"
+path = "lib.rs"
