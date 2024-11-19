@@ -14,7 +14,7 @@ syn = { version = "2", features = ["full"] }
 anyhow = "1.0.72"
 jsonrpsee = { version = "0.23.2", features = ["macros", "server"] }
 serde = { version = "1.0.179", features = ["derive"] }
-utoipa = "4.2.3"
+utoipa = "5.2.0"
 
 [lib]
 name = "l2l_openapi_macros"

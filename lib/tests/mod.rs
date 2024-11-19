@@ -4,7 +4,7 @@ use jsonrpsee::{core::RpcResult, proc_macros::rpc};
 use l2l_openapi::open_api;
 use serde::Serialize;
 use utoipa::{
-    openapi::{RefOr, Schema, SchemaType},
+    openapi::{self, RefOr, Schema},
     PartialSchema, ToSchema,
 };
 
@@ -30,7 +30,7 @@ struct SocketAddrSchema;
 
 impl PartialSchema for SocketAddrSchema {
     fn schema() -> RefOr<Schema> {
-        let obj = utoipa::openapi::Object::with_type(SchemaType::String);
+        let obj = utoipa::openapi::Object::with_type(openapi::Type::String);
         RefOr::T(Schema::Object(obj))
     }
 }

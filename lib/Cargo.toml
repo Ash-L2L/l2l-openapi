@@ -7,7 +7,7 @@ version.workspace = true
 [dependencies]
 jsonrpsee = "0.23"
 l2l-openapi-macros = { path = "../macros" }
-utoipa = "4"
+utoipa = "5"
 
 [dev-dependencies]
 anyhow = "1.0.72"
