@@ -7,13 +7,13 @@ publish.workspace = true
 version.workspace = true
 
 [dependencies]
-jsonrpsee = "0.24"
+jsonrpsee = { workspace = true }
 l2l-openapi-macros = { path = "../macros" }
 utoipa = "5"
 
 [dev-dependencies]
 anyhow = "1.0.72"
-jsonrpsee = { version = "0.24", features = ["macros", "server"] }
+jsonrpsee = { workspace = true, features = ["macros", "server"] }
 serde = { version = "1.0.179", features = ["derive"] }
 
 [lib]
