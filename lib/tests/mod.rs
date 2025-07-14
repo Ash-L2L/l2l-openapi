@@ -86,6 +86,10 @@ pub trait TestRpc {
     #[open_api_method(output_schema(ToSchema))]
     #[method(name = "result_inner_ref")]
     async fn result_inner_ref(&self, some_u32: u32) -> RpcResult<InnerRefs>;
+
+    /// Subscription
+    #[subscription(name = "subscribe", item = ())]
+    async fn subscribe(&self) -> jsonrpsee::core::SubscriptionResult;
 }
 
 #[test]

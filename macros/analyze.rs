@@ -387,7 +387,14 @@ pub fn analyze(mut ast: Ast) -> Result<Model, Error> {
         .items
         .iter_mut()
         .filter_map(|trait_item| match trait_item {
-            TraitItem::Fn(trait_item_fn) => Some(analyze_trait_item_fn(trait_item_fn)),
+            TraitItem::Fn(trait_item_fn)
+                if trait_item_fn
+                    .attrs
+                    .iter()
+                    .any(|attr| attr.path().is_ident("method")) =>
+            {
+                Some(analyze_trait_item_fn(trait_item_fn))
+            }
             _ => None,
         })
         .for_each(|res| match res {
